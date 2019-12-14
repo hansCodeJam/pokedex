@@ -1,4 +1,6 @@
-for(let i = 1; i < 400; i++) {
+const pokedex = document.getElementById('pokedex');
+
+for(let i = 1; i < 151; i++) {
     const fetchPokemon = () => {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         fetch(url)
@@ -18,8 +20,19 @@ for(let i = 1; i < 400; i++) {
             };
             
             
-            console.log(pokemon);
+            displayPokemon(pokemon);
         });
+    }
+
+    const displayPokemon = (pokemon) => {
+        const pokemonHTMLString = pokemon.map(pokeman => `
+            <li>
+                <img src="${pokeman.image}"/>
+                <h2>${pokeman.id}. ${pokeman.name}</h2>
+                <p>Type: ${pokeman.type}</p>
+            </li>
+            `)
+        pokedex.innerHTML = pokemonHTMLString;
     }
     
     fetchPokemon();
