@@ -4,9 +4,11 @@ A pokedex that can display the first 300 pokemon that includes their types and a
 
 Other tools that were used in this project were 
 - [bootstrap](https://getbootstrap.com/)  
-- [dafont](https://www.dafont.com/) - font-family: Early Gameboy
+- [dafont gameboy](https://www.dafont.com/early-gameboy.font) 
 
 ![](https://pokeapi.co/static/logo-6221638601ef7fa7c835eae08ef67a16.png)
+
+![](https://www.dafont.com/img/illustration/e/a/early_gameboy.png)
 
 
 
