@@ -1,0 +1,95 @@
+body {
+    background-color: #808080 !important;
+    color: white;
+    margin: 0;
+    font-family: Early Gameboy !important;
+}
+
+h1 {
+    color: white !important;
+}
+
+.container {
+    padding: 40px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 45px;
+
+}
+
+#pokedex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+    padding-inline-start: 0;
+    border: 2px #222;
+}
+
+.card {
+    list-style: none;
+    padding: 40px;
+    background-color: #9bbc0e !important;
+    color: #222;
+    text-align: center;
+    font-family: Early Gameboy;
+    border-radius: 2em !important;
+    border-style: 2px #222;
+}
+
+.card:hover {
+    animation: bounce 0.5s linear;
+}
+
+#header{
+  display: grid;
+  grid-auto-columns: repeat(3, 1fr);
+  grid-template-areas: 
+  "pok1 nav1 pok2";
+}
+.card-title {
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    font-size: 25px;
+    font-weight: normal;
+}
+.card-subtitle {
+    margin-top: 5px;
+    color: #666;
+    font-weight: lighter;
+}
+
+.card-image {
+    height: 180px;
+    background-color: #9bbc0e !important;
+}
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+hr.new1 {
+    border-top: 10px solid #7F2E5F;
+
+  }
+
+  hr.new2 {
+    border-top: 10px solid #4F4F96;
+  }  
+
+  

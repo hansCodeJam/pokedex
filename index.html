@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Pokedex</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="icon" href="images/IMGBIN_pokeball-png_KRcDs3Bw.png">
     </head>
     <body>
-        <h1>Quick's Pokedex</h1>
-        <ol id="pokedex">
-            
-        </ol>
-        <script src="./main.js"></script>
+        <div class="container">
+            <div class="mt-2" id="header">
+                <div>
+                    <hr class="new1">
+                    <hr class="new2">
+                </div>
+                <div>
+                    <h1>Pokedex</h1>
+                </div>
+                <div>
+                    <hr class="new1">
+                    <hr class="new2"> 
+                </div>
+            </div>
+            <div class="mt-4">
+                <input type="text" class="form-control" id="input" onkeyup="filterInputFunction()" placeholder="Enter Pokemon">
+            </div>
+            <ul class="mt-5" id="pokedex"></ul>
+        </div>
+        <script src="main.js"></script>
     </body>
 </html>

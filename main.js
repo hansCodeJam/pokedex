@@ -1,40 +1,53 @@
 const pokedex = document.getElementById('pokedex');
 
-for(let i = 1; i < 151; i++) {
-    const fetchPokemon = () => {
-        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        fetch(url)
-        .then((res)=> {
-            return res.json();
-        })
-        .then ((data)=> {
-            console.log(data);
-            const pokemon = {
-             name: data.name,
-             id: data.id,
-             image: data.sprites['front_default'],
-             type: data.types
-                .map((type)=> type.type.name)
-                .join(', ')
-    
-            };
-            
-            
-            displayPokemon(pokemon);
-        });
-    }
+const filterInputFunction = () => {
+    let input = document.getElementById('input')
+    let filter = input.value.toUpperCase();
+    let ul = pokedex;
+    let li = ul.getElementsByTagName('li');
 
-    const displayPokemon = (pokemon) => {
-        const pokemonHTMLString = pokemon.map(pokeman => `
-            <li>
-                <img src="${pokeman.image}"/>
-                <h2>${pokeman.id}. ${pokeman.name}</h2>
-                <p>Type: ${pokeman.type}</p>
-            </li>
-            `)
-        pokedex.innerHTML = pokemonHTMLString;
+    for (let i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("h2")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
     }
-    
-    fetchPokemon();
-
 }
+
+const fetchPokemon = () => {
+    const promises = [];
+    for (let i = 1; i <= 151; i++) {
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        promises.push(fetch(url).then((res) => res.json()));
+    }
+    Promise.all(promises).then((results) => {
+        const pokemon = results.map((result) => ({
+            name: result.name,
+            image: result.sprites['front_default'],
+            type: result.types.map((type) => type.type.name).join(', '),
+            id: result.id
+        }));
+        displayPokemon(pokemon);
+    });
+};
+
+const displayPokemon = (pokemon) => {
+    console.log(pokemon);
+    const pokemonHTMLString = pokemon
+        .map(
+            (pokeman) => `
+        <li class="card">
+            <img class="card-image" src="${pokeman.image}"/>
+            <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+            <p class="card-subtitle">Type: ${pokeman.type}</p>
+        </li>
+    `
+        )
+        .join('');
+    pokedex.innerHTML = pokemonHTMLString;
+};
+
+fetchPokemon();
