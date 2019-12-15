@@ -1,6 +1,6 @@
 const pokedex = document.getElementById('pokedex');
 
-const filterInputFunction = () => {
+const filterInputFunctionName = () => {
     let input = document.getElementById('input')
     let filter = input.value.toUpperCase();
     let ul = pokedex;
@@ -17,9 +17,26 @@ const filterInputFunction = () => {
     }
 }
 
+const filterInputFunctionTypeOrAbilities = () => {
+    let input = document.getElementById('input')
+    let filter = input.value.toUpperCase();
+    let ul = pokedex;
+    let li = ul.getElementsByTagName('li');
+
+    for (let i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("p")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 300; i++) {
+    for (let i = 1; i <= 800; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
