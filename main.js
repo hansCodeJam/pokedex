@@ -17,43 +17,43 @@ const filterInputFunctionName = () => {
     }
 }
 
-const filterInputFunctionType = () => {
-    let input = document.getElementById('input-1')
-    let filter = input.value.toUpperCase();
-    let ul = pokedex;
-    let li = ul.getElementsByTagName('li');
+// const filterInputFunctionType = () => {
+//     let input = document.getElementById('input-1')
+//     let filter = input.value.toUpperCase();
+//     let ul = pokedex;
+//     let li = ul.getElementsByTagName('li');
 
-    for (let i = 0; i < li.length; i++) {
-        a = li[i].getElementsByClass("card-subtitle-1")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
+//     for (let i = 0; i < li.length; i++) {
+//         a = li[i].getElementsTagName("p")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
 
-const filterInputFunctionAbilities = () => {
-    let input = document.getElementById('input-2')
-    let filter = input.value.toUpperCase();
-    let ul = pokedex;
-    let li = ul.getElementsByTagName('li');
+// const filterInputFunctionAbilities = () => {
+//     let input = document.getElementById('input-2')
+//     let filter = input.value.toUpperCase();
+//     let ul = pokedex;
+//     let li = ul.getElementsByTagName('li');
 
-    for (let i = 0; i < li.length; i++) {
-        a = li[i].getElementsByClass("card-subtitle-2")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
+//     for (let i = 0; i < li.length; i++) {
+//         a = li[i].getElementsByTagName("p")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
 
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 800; i++) {
+    for (let i = 1; i <= 100; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
