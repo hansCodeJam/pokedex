@@ -53,7 +53,7 @@ const filterInputFunctionType = () => {
 
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 800; i++) {
+    for (let i = 1; i <= 807; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
