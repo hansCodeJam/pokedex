@@ -52,7 +52,6 @@ li .card {
     border-style: 100px #222;
 }
 
-
 .card:hover {
     animation: bounce 0.5s linear;
 }
