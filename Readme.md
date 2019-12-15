@@ -1,6 +1,6 @@
 # Pokedex 
 
-An old school gameboy style pokedex that can display 800 pokemon that includes their types and abilties all fetch from [Pokeapi](https://pokeapi.co/). The input will filter through the whole list by names or number. 
+An old school Gameboy style Pokedex that can display all 807 existing pokemons that includes their types and abilities all fetched from [Pokeapi](https://pokeapi.co/). The inputs will filter through the whole list by names, types, or abilities. 
 
 Other tools that were used in this project were 
 - [bootstrap](https://getbootstrap.com/)  
