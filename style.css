@@ -37,6 +37,10 @@ h1 {
     border: 2px #222;
 }
 
+li .card {
+    border-color: #222;
+}
+
 .card {
     list-style: none;
     padding: 40px;
@@ -45,8 +49,9 @@ h1 {
     text-align: center;
     font-family: Early Gameboy;
     border-radius: 2em !important;
-    border-style: 2px #222;
+    border-style: 100px #222;
 }
+
 
 .card:hover {
     animation: bounce 0.5s linear;
