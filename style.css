@@ -9,6 +9,14 @@ h1 {
     color: white !important;
 }
 
+h2 {
+    color: #0f380f !important;
+}
+
+p {
+    color: #306230 !important;
+}
+
 .container {
     padding: 40px;
     margin: 0 auto;
