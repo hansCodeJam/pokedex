@@ -17,14 +17,31 @@ const filterInputFunctionName = () => {
     }
 }
 
-const filterInputFunctionTypeOrAbilities = () => {
-    let input = document.getElementById('input')
+const filterInputFunctionType = () => {
+    let input = document.getElementById('input-1')
     let filter = input.value.toUpperCase();
     let ul = pokedex;
     let li = ul.getElementsByTagName('li');
 
     for (let i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("p")[0];
+        a = li[i].getElementsByClass("card-subtitle-1")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+const filterInputFunctionAbilities = () => {
+    let input = document.getElementById('input-2')
+    let filter = input.value.toUpperCase();
+    let ul = pokedex;
+    let li = ul.getElementsByTagName('li');
+
+    for (let i = 0; i < li.length; i++) {
+        a = li[i].getElementsByClass("card-subtitle-2")[0];
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
@@ -60,8 +77,8 @@ const displayPokemon = (pokemon) => {
         <li class="card">
             <img class="card-image" src="${pokeman.image}"/>
             <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-            <p class="card-subtitle">Type: ${pokeman.type}</p>
-            <p class="card-subtitle">Abilities: ${pokeman.ability}</p>
+            <p class="card-subtitle-1" id="p1">Type: ${pokeman.type}</p>
+            <p class="card-subtitle-2" id="p2">Abilities: ${pokeman.ability}</p>
         </li>
     `
         )
