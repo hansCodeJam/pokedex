@@ -4,7 +4,7 @@ A pokedex that can display the first 151 pokemon that were fetch from [Pokeapi](
 
 Other tools that were used in this project were 
 - [bootstrap](https://getbootstrap.com/)  
-- [dafont](https://www.dafont.com/)
+- [dafont](https://www.dafont.com/) - font-family: Early Gameboy
 
 ![](https://pokeapi.co/static/logo-6221638601ef7fa7c835eae08ef67a16.png)
 
