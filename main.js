@@ -3,7 +3,7 @@ const pokedex = document.getElementById('pokedex');
 const filterInputFunctionName = () => {
     let input = document.getElementById('input')
     let filter = input.value.toUpperCase();
-    let ul = pokedex;
+    const ul = pokedex;
     let li = ul.getElementsByTagName('li');
 
     for (let i = 0; i < li.length; i++) {
@@ -20,11 +20,11 @@ const filterInputFunctionName = () => {
 const filterInputFunctionType = () => {
     let input = document.getElementById('input-1')
     let filter = input.value.toUpperCase();
-    let ul = pokedex;
+    const ul = pokedex;
     let li = ul.getElementsByTagName('li');
 
     for (let i = 0; i < li.length; i++) {
-        a = li[i].getElementsTagName("p")[1];
+        a = li[i].getElementsTagName("p")[0];
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
@@ -53,10 +53,11 @@ const filterInputFunctionType = () => {
 
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 807; i++) {
+    for (let i = 1; i <= 100; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
+
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
             name: result.name,
